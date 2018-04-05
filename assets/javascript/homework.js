@@ -1,4 +1,5 @@
 // JavaScript Document
+// finally finished ;)
 
 
 var bear = {
@@ -114,14 +115,16 @@ function giphyClicker(arg) {
 
           var giphy = "https://giphy.com/embed/" + gid;
           /// $("#animals").append("<p><iframe src='" + giphy + "' width='390' height='480' frameBorder='0' class='giphy-embed' allowFullScreen></iframe> </p>");
-          var div = $("<div style='display:inline;'>");
+          var div = $("<div style='width:20%'>");
           var img = $('<img>');
-          div.append("<div>Rating: " + rating + "</div>");
-          div.append(img);
+          var div2 = $("<div>");
+          div.append("<div style='width:140px;'>Rating: " + rating + "</div>");
+          div.append(div2);
+          div2.append(img);
 
           img.attr('src', gifObject.images.fixed_height_still.url);
           $(img).click(function(){
-          	if (zai.moving == true ) {
+          	if (zai.moving) {
           		$(img).attr("src",gifObject.images.fixed_height_still.url);
           		zai.moving = false;
           	}
